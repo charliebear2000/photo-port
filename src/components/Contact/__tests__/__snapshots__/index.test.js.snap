@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contact component renders renders 1`] = `
+exports[`PhotoList is rendering renders 1`] = `
 <DocumentFragment>
   <section>
     <h1
       data-testid="h1tag"
     >
-      Contact me
+      Contact Me
     </h1>
     <form
       id="contact-form"
@@ -25,7 +25,7 @@ exports[`Contact component renders renders 1`] = `
       </div>
       <div>
         <label
-          for="exampleInputEmail1"
+          for="email"
         >
           Email address:
         </label>

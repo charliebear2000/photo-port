@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Nav from './components/Nav';
 import About from './components/About';
+import Nav from './components/Nav'
 import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
 
 function App() {
-  const [categories] = useState([ 
+  // lifting from Nav
+  const [categories] = useState([
     {
       name: 'commercial',
       description: 'Photos of grocery stores, food trucks, and other commercial projects',
@@ -17,26 +18,27 @@ function App() {
 
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
+  // contact form is not initially shown, gallery is 
   const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <div>
       <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
+      categories={categories}
+      setCurrentCategory={setCurrentCategory}
+      currentCategory={currentCategory}
+      contactSelected={contactSelected}
+      setContactSelected={setContactSelected}
       ></Nav>
       <main>
         {!contactSelected ? (
-          <>
-            <Gallery currentCategory={currentCategory}></Gallery>
-            <About></About>
-          </>
+        <>
+        <Gallery currentCategory={currentCategory}></Gallery>
+        <About></About>
+        </>
         ) : (
-            <ContactForm></ContactForm>
-          )}
+        <ContactForm></ContactForm>
+        )}
       </main>
     </div>
   );
